@@ -10,7 +10,7 @@ This repository contains the accompanying code for the paper:
 The repository contains:
 * ...
 
-# Sory for the delay - code will be uploaded before June 21.
+# Sorry for the delay. Code will be uploaded before June 21!
 
 ---
 ### Citation
