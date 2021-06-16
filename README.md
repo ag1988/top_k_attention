@@ -8,9 +8,9 @@ This repository contains the accompanying code for the paper:
 
 ### Structure
 The repository contains:
-* ...
+* our implementation/benchmarking of top-k attention (in `nocache_attention` dir)
+* unifiedqa/T5 finetuning/inference using our top-k attention at feed-forward layers (in `unifiedqa` dir)
 
-# Sorry for the delay. Code will be uploaded before June 21!
 
 ---
 ### Citation

@@ -1,0 +1,21 @@
+	dataset	k	em	type
+0	commonsenseqa	3072	35.7	t5-base no finetuning
+1	commonsenseqa	3072	61.9	t5-base finetuning
+2	commonsenseqa	256	62.0	t5-base finetuning
+3	commonsenseqa	3072	45.0	unifiedqa-base no finetuning
+4	openbookqa	3072	17.0	t5-base no finetuning
+5	openbookqa	3072	58.8	t5-base finetuning
+6	openbookqa	256	58.0	t5-base finetuning
+7	openbookqa	3072	59.6	unifiedqa-base no finetuning
+8	boolq	3072	0.5	t5-base no finetuning
+9	boolq	3072	83.3	t5-base finetuning
+10	boolq	256	83.1	t5-base finetuning
+11	boolq	3072	82.0	unifiedqa-base no finetuning
+12	ropes	3072	21.7	t5-base no finetuning
+13	ropes	3072	54.0	t5-base finetuning
+14	ropes	256	53.8	t5-base finetuning
+15	ropes	3072	26.3	unifiedqa-base no finetuning
+16	mctest	3072	36.6	t5-base no finetuning
+17	mctest	3072	81.2	t5-base finetuning
+18	mctest	256	79.4	t5-base finetuning
+19	mctest	3072	85.3	unifiedqa-base no finetuning
