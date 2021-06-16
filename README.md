@@ -11,6 +11,9 @@ The repository contains:
 * our implementation/benchmarking of top-k attention (in `nocache_attention` dir)
 * unifiedqa/T5 finetuning/inference using our top-k attention at feed-forward layers (in `unifiedqa` dir)
 
+Coming Soon: 
+* BERT QA model with top-k attention
+* T5 multi-head layers with top-k attention (current code is only for FF layers)
 
 ---
 ### Citation
