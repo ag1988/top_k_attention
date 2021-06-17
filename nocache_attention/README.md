@@ -7,14 +7,15 @@ import torch
 from torch import nn
 from nocache_attention import AttentionNoCache
 
-bs, nh, L_Q, L_K, d = 2, 12, 16384, 16384, 64
+# batch size, num heads, num queries, num keys, head dim
+bs, nh, n_queries, n_keys, d = 2, 12, 16384, 16384, 64
 f, drop = nn.Softmax(-1), nn.Dropout(0.1)
 
 activation = lambda x: drop(f(x * d**-0.5)) 
 args = {'topk':128, 'Q_chunk_size':2048}
 
-Q = torch.randn(bs, nh, L_Q, d, device='cuda', requires_grad=True)
-K, V = (torch.randn(bs, nh, L_K, d, device='cuda', requires_grad=True) for _ in range(2))
+Q = torch.randn(bs, nh, n_queries, d, device='cuda', requires_grad=True)
+K, V = (torch.randn(bs, nh, n_keys, d, device='cuda', requires_grad=True) for _ in range(2))
 out = AttentionNoCache(activation)(Q, K, V, causal_masking=True, args=args) 
 loss = out.mean()
 loss.backward()
@@ -34,16 +35,16 @@ pip install  performer-pytorch  pytorch-fast-transformers>=0.3.0
 ``` 
 <br/> 
 
-- Benchmarking single FF layer 
+- Benchmarking single FF layer with varying feed-forward dimension
 ```bash
 for L in 2048 {2048..65536..2048}
 do
     CUDA_VISIBLE_DEVICES=0 python benchmarking_single_layer.py  --output_dir out_benchmarking2  --n_heads 0 --K_chunk_size -1  --layer ff  --head_size 768  --backward   --n_queries 512  --batch_size 512  --topk -1 --n_keys $L  --Q_chunk_size 16384 --attn_variant <attn>
 done
 ```
-where `<attn>` can be `vanilla`, `Q-chunking`, `topk-sparse`. You can use `--topk 512` for using the top-k attention.  
+where `<attn>` can be `vanilla`, `Q-chunking`, `topk-sparse`. Here `--n_keys` denotes feed-forward dimension and `--n_queries` denotes input length. You can use `--topk 512` for using the top-k attention.  
 
-
+<br/>
 - Benchmarking 12-layer model  
 ```bash
 for L in 2048 {2048..32768..2048}
