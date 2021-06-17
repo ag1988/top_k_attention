@@ -42,9 +42,9 @@ do
     CUDA_VISIBLE_DEVICES=0 python benchmarking_single_layer.py  --output_dir out_benchmarking2  --n_heads 0 --K_chunk_size -1  --layer ff  --head_size 768  --backward   --n_queries 512  --batch_size 512  --topk -1 --n_keys $L  --Q_chunk_size 16384 --attn_variant <attn>
 done
 ```
-where `<attn>` can be `vanilla`, `Q-chunking`, `topk-sparse`. Here `--n_keys` denotes feed-forward dimension and `--n_queries` denotes input length. You can use `--topk 512` for using the top-k attention.  
-
+where `<attn>` can be `vanilla`, `Q-chunking`, `topk-sparse`. Here `--n_keys` denotes feed-forward dimension and `--n_queries` denotes input length. You can use `--topk 512` for using the top-k attention.
 <br/>
+
 - Benchmarking 12-layer model  
 ```bash
 for L in 2048 {2048..32768..2048}
