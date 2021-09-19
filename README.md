@@ -19,10 +19,11 @@ The repository contains:
 ---
 ### Citation
 ```
-@article{gupta2021memoryefficient,
+@inproceedings{gupta2021memoryefficient,
   title={Memory-efficient Transformers via Top-k Attention}, 
   author={Ankit Gupta and Guy Dar and Shaya Goodman and David Ciprut and Jonathan Berant},
+  booktitle = {Proceedings of SustaiNLP: Workshop on Simple and Efficient Natural Language Processing},
   year={2021},
-  journal = {arXiv preprint arXiv:2106.06899},
+  publisher = {Association for Computational Linguistics}
 }
 ```
