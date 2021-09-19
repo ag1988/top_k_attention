@@ -2,7 +2,7 @@
 
 This repository contains the accompanying code for the paper:
 
-**"Memory-efficient Transformers via Top-k Attention."** Ankit Gupta, Guy Dar, Shaya Goodman, David Ciprut, Jonathan Berant.
+**"Memory-efficient Transformers via Top-k Attention."** Ankit Gupta, Guy Dar, Shaya Goodman, David Ciprut, Jonathan Berant. *In SustaiNLP, 2021*. 
 [[PDF]](https://arxiv.org/pdf/2106.06899.pdf)
 
 
